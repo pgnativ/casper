@@ -15,5 +15,7 @@
 <!--<p [innerText]="allowAddServer"></p>-->
 <!--<p>{{ serverCreationStatus }}</p>-->
 <p *ngIf="serverCreated">Server was created {{ serverName }}!</p>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+<hr>
+<button (click)="showPassword = !showPassword">Show password</button>
+<p *ngIf="showPassword">Password = zzz</p>
