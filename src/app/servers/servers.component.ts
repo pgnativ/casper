@@ -13,6 +13,7 @@ export class ServersComponent implements OnInit {
   servers: any = [];
 
   showPassword: boolean = false;
+  log = [];
 
   constructor() {
     /*setTimeout(() => {
@@ -41,5 +42,10 @@ export class ServersComponent implements OnInit {
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onToggleDetails() {
+    this.showPassword = !this.showPassword;
+    this.log.push(this.log.length + 1);
   }
 }

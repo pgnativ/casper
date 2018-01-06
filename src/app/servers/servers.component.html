@@ -17,5 +17,10 @@
 <p *ngIf="serverCreated">Server was created {{ serverName }}!</p>
 <app-server *ngFor="let server of servers"></app-server>
 <hr>
-<button (click)="showPassword = !showPassword">Show password</button>
+<button (click)="onToggleDetails()">Show password</button>
 <p *ngIf="showPassword">Password = zzz</p>
+<div
+  *ngFor="let count of log"
+  [ngStyle]="{backgroundColor: count >= 3 ? 'red' : ''}"
+  [ngClass]="{'u-color-green': count >= 6}"
+  >{{ count }}</div>
